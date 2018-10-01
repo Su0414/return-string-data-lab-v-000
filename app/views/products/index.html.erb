@@ -20,11 +20,9 @@ $(function () {
     var id = $(this).data("id");
     $.get("/products/" + id + "/description", function(data_description) {
       $.get("/products/" + id + "/inventory", function(data_inventory) {
-        let inventory_text = " Available"
-        if(data_inventory === "false"){
-          // Replace text of body-id div
-          // alert(data_description+"Sold Out")
-          inventory_text = " Sold Out"
+        let inventory_text = "Available"
+        if(data_inventory === "false"){        
+          inventory_text = "Sold Out"
         }
         alert(data_description + inventory_text)
           $("#product-" + id).html(data_description + inventory_text);
