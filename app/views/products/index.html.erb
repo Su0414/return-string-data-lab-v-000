@@ -22,6 +22,11 @@ $(function () {
       // Replace text of body-id div
       $("#description-" + id).text(data);
     });
+
+    $.get("/products/" + id + "/inventory", function(data) {
+      // Replace text of body-id div
+      $("#inventory-" + id).text(data);
+    });
   });
 });
 </script>
