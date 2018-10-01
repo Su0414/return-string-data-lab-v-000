@@ -20,11 +20,9 @@ $(function () {
     var id = $(this).data("id");
     $.get("/products/" + id + "/description", function(data_description) {
       $.get("/products/" + id + "/inventory", function(data_inventory) {
-      // Replace text of body-id div
-      $("#description-" + id).text(data_description);
-    });
-
-
+        // Replace text of body-id div
+        $("#description-" + id).text(data_description);
+      });
     });
   });
 });
