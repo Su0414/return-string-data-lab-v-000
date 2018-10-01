@@ -20,12 +20,13 @@ $(function () {
     var id = $(this).data("id");
     $.get("/products/" + id + "/description", function(data_description) {
       $.get("/products/" + id + "/inventory", function(data_inventory) {
+        var inventory_text = " Available"
         if(data_inventory === "false"){
           // Replace text of body-id div
           // alert(data_description+"Sold Out")
-          $("#product-" + id).text("Sold Out");
+          inventory_text = " Sold Out"
         }
-          $("#product-" + id).text(data_description + " Available");
+          $("#product-" + id).text(data_description + inventory_text);
 
       });
     });
