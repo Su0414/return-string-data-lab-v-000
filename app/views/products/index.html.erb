@@ -19,13 +19,12 @@ $(function () {
   $(".js-more").on('click', function() {
     var id = $(this).data("id");
     $.get("/products/" + id + "/description", function(data) {
+      $.get("/products/" + id + "/inventory", function(data) {
       // Replace text of body-id div
       $("#description-" + id).text(data);
     });
 
-    $.get("/products/" + id + "/inventory", function(data) {
-      // Replace text of body-id div
-      $("#inventory-" + id).text(data);
+    
     });
   });
 });

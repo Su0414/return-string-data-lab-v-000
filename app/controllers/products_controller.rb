@@ -15,7 +15,7 @@ class ProductsController < ApplicationController
 
   def description
     @product = Product.find_by(id: params[:id])
-    render plain: @product.description    
+    render plain: @product.description
   end
 
   def inventory
